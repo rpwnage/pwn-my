@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
 });
 
 server.listen(port, () => {
-	console.log("[SERVER] listening on *:3000");
+	console.log("[SERVER] listening on *:" + port);
 });
 
 io.on("connection", (socket) => {

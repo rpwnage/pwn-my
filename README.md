@@ -7,3 +7,5 @@ Made by RPwnage & the Manticore team
 * Current Exploit is only for iOS 14.5+ and MacOS 11.3+ as it exploits a vulnerability in audioworklet
 
 * README by -DramaBinny
+
+JOIN US AT THE MANTICORE DISCORD SERVER https://discord.gg/mWHbDWcwmZ

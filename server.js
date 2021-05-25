@@ -8,11 +8,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-app.use(express.static("source"));
-
-app.get("/", function (req, res) {
-	res.sendFile(path.join(__dirname, "source/index.html"));
-});
+app.use(express.static("./source"));
 
 server.listen(port, () => {
 	console.log("[SERVER] listening on *:" + port);

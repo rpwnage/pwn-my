@@ -1,0 +1,22 @@
+body {
+    font-family: monospace;
+}
+
+.siteHeading {
+    font-size: 4rem;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.exploitButton {
+    position: fixed;
+    bottom: 2%;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 10%;
+    border-radius: 25px;
+    border: 0px none;
+    font-size: 4rem;
+}

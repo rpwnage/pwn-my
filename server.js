@@ -1,4 +1,5 @@
 var port = 666;
+var debug = false;
 
 var express = require("express");
 const path = require("path");
@@ -15,5 +16,9 @@ server.listen(port, () => {
 });
 
 io.on("connection", (socket) => {
-	console.log("[CLIENT] New client connection... (" + socket.id + ")");
+	socket.on("exploit_start", function (data) {
+		console.log("[EXPLOIT] Exploit has been started. (" + data.userAgent + ")");
+	});
+
+	if(debug === true) console.log("[CLIENT] New client connection... (" + socket.id + ")");
 });

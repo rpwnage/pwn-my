@@ -17,8 +17,16 @@ server.listen(port, () => {
 
 io.on("connection", (socket) => {
 	socket.on("exploit_start", function (data) {
-		console.log("[EXPLOIT] Exploit has been started. (" + data.userAgent + ")");
+		console.log(
+			"[EXPLOIT] Exploit has been started. (" + data.userAgent + ")"
+		);
+		console.log("[EXPLOIT] Supporting iOS " + data.exploitVersion);
 	});
 
-	if(debug === true) console.log("[CLIENT] New client connection... (" + socket.id + ")");
+	socket.on("log_normal", function (data) {
+		console.log("[EXPLOIT] " + data);
+	});
+
+	if (debug === true)
+		console.log("[CLIENT] New client connection... (" + socket.id + ")");
 });

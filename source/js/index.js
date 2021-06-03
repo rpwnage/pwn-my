@@ -10,13 +10,13 @@ async function pwnMe() {
         console.log("Starting exploitation for iOS 14.6");
         await kickstart146();
     }else {
-        console.log("Detected a unsupported Device/Version")
+        console.log("Detected a unsupported Device/Version");
     }
 }
 
 const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', appHeight)
-appHeight()
+    const doc = document.documentElement;
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+};
+window.addEventListener('resize', appHeight);
+appHeight();

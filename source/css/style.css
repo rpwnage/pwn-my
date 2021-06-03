@@ -9,15 +9,19 @@
 body {
     font-family: monospace;
     background-color: black;
-    color: #e5e5e5;     
+    color: #e5e5e5;   
+    text-align: center;  
+}
+
+.header {
+    margin: 15px;
 }
 
 .content {
     display: flex;
     flex-direction: column;    
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: space-between;
+    align-items: center;    
     height: var(--app-height);
 }
 
@@ -40,4 +44,5 @@ h1 {
     padding: 15px;
     width: 175px;   
     font-size: 15px; 
+    margin: 15px;
 }

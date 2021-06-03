@@ -14,7 +14,7 @@ body {
 }
 
 .header {
-    margin: 15px;
+    margin: 30px;
 }
 
 .content {
@@ -44,5 +44,5 @@ h1 {
     padding: 15px;
     width: 175px;   
     font-size: 15px; 
-    margin: 15px;
+    margin: 30px;
 }

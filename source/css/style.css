@@ -1,22 +1,43 @@
-body {
-    font-family: monospace;
+* {
+    margin: 0px;
 }
 
-.siteHeading {
-    font-size: 4rem;
-    position: fixed;
-    text-align: center;
-    width: 100%;
+:root {
+    --app-height: 100%;
+ }
+
+body {
+    font-family: monospace;
+    background-color: black;
+    color: #e5e5e5;     
+}
+
+.content {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: var(--app-height);
+}
+
+h5 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-bottom: 5px;
 }
 
 .exploitButton {
-    position: fixed;
-    bottom: 2%;
-    left: 5%;
-    right: 5%;
-    width: 90%;
-    height: 10%;
-    border-radius: 25px;
-    border: 0px none;
-    font-size: 4rem;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: #202020;
+    color: #e5e5e5;
+    padding: 15px;
+    width: 175px;   
+    font-size: 15px; 
 }

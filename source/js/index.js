@@ -13,3 +13,10 @@ async function pwnMe() {
         console.log("Detected a unsupported Device/Version")
     }
 }
+
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()

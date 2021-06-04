@@ -1,5 +1,6 @@
 * {
     margin: 0px;
+    -webkit-user-select: none;
 }
 
 :root {
@@ -7,7 +8,7 @@
  }
 
 body {
-    font-family: monospace;
+    font-family: '-apple-system',sans-serif;
     background-color: black;
     color: #e5e5e5;   
     text-align: center;  
@@ -15,14 +16,19 @@ body {
 
 .header {
     margin: 30px;
+    text-shadow: 0px 0px 16px #000000, 0px 0px 16px #000000;
 }
 
 .content {
     display: flex;
     flex-direction: column;    
-    justify-content: space-between;
-    align-items: center;    
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
     height: var(--app-height);
+    background-image: url("../img/bg.jpg");
+    background-position: center top;
+    background-size: auto 220%;
 }
 
 h5 {
@@ -35,14 +41,131 @@ h1 {
 }
 
 .exploitButton {
-    border-radius: 7px;
+    border-radius: 100px;
     outline: none;
     border: none;
     box-shadow: none;
-    background-color: #202020;
     color: #e5e5e5;
     padding: 15px;
-    width: 175px;   
+    width: 64px;   
+    height: 64px;
     font-size: 15px; 
-    margin: 30px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: #000a;
+    transition: 0.3s background-color, 0.3s color;
+    text-align: right;
+    overflow:hidden;
+}
+.exploitButton > svg {
+    margin-left: -2px; margin-top: -3px;
+    transition: 0.3s opacity;
+}
+.ic {
+    font-family: "SF Symbols", "-apple-system";
+}
+#jbButton {
+    position: fixed;
+    bottom: 45px;
+    left: 45px;
+    animation:  idle 10s infinite;
+}
+#settingsButton {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+}
+#options {
+    background: #fff;
+    color: #000;
+    width: 100vw;
+    position: fixed;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    left:0;
+    top:100vh;
+    transition: 0.3s top;
+    height: 100vh;
+}
+
+body.optionsOpen #options {
+    top: 32px;
+}
+body.optionsOpen #mainPage {
+    filter: brightness(50%);
+    transform: scale(0.9) translate(0px,16px);
+    border-radius: 16px;
+    overflow:hidden;
+}
+#mainPage {
+    transform-origin: top center;
+    transition: 0.3s filter, 0.3s transform, 0.3s border-radius;
+}
+.triggered {
+    background: #fff;
+    color: #000;
+}
+
+#settingsButton {
+    transition: 0.1s transform;
+}
+
+.sliding #settingsButton {
+    transform: scale(0);
+    pointer-events: none;
+}
+.active svg {
+    opacity: 0;
+}
+.progress {
+    opacity: 0;
+    position: fixed;
+    left: 0vw;
+    bottom: 45px;
+    width: 100vw;
+    height: 32px;
+    line-height: 0;
+    font-size: 200%;
+    text-align: center;
+    vertical-align: center;
+    transition: 0.3s opacity;
+    color: #fff;
+}
+.active .progress {
+    opacity: 1;
+}
+
+.progressBar {
+    width: 0%;
+    height: 100%;
+    background: #fff8;
+    top:0;
+    left:0;
+    position: absolute;
+    transition: 0.3s width;
+}
+
+.sliding #jbButton, .active #jbButton {animation: none;}
+@keyframes idle {
+    0% {
+        width: 64px;
+    }
+    20% {
+        width: 96px;
+    }
+    40% {
+        width: 64px;
+    }
+}
+.unsupported  .exploitButton {
+    opacity: 0.5;
+    animation: none !important;
+    pointer-events: none;
+}
+
+body:not(.unsupported) h3 {
+    display: none;
+}
+.logentry {
+    font-family: monospace;
 }

@@ -45,8 +45,9 @@ h1 {
     background-color: #202020;
     color: #e5e5e5;
     padding: 15px;
-    width: 175px;   
+    width: 90%;   
     font-size: 15px; 
+<<<<<<< HEAD
     margin: 30px;
 }
 
@@ -74,3 +75,7 @@ h1 {
     font-size: 15px; 
     margin: 30px;
 }
+=======
+    margin: 15px;
+}
+>>>>>>> a014b42a05bf169f1da0b4a7458f1601a91c7af8

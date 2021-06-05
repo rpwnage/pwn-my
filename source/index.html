@@ -2,18 +2,21 @@
 <html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/style.css"/>
+		<link rel="stylesheet" id="theme" href=""/>
+		<script type="text/javascript" src="/js/theme.js"></script>
 		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 		<script type="text/javascript" src="/js/exploits/14.5.js"></script>
 		<script type="text/javascript" src="/js/exploits/14.6.js"></script>
 	</head>
 	<body>
 		<div class="content">
-			<script type="text/javascript" src="/js/index.js"></script>
+			<script type="text/javascript" src="js/index.js"></script>
 			<div class="header">
 				<h1>Manticore Web</h1>
 				<h5>iOS 14.5 - 14.6</h5>
-			</div>			
+			</div>
+			<button id="themeButton" onclick="toggleTheme()">Switch theme</button>		
 			<button id="jbButton" class="exploitButton" onclick="pwnMe();">Jailbreak</button>		
 		</div>
 	</body>

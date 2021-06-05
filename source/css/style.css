@@ -6,13 +6,6 @@
     --app-height: 100%;
  }
 
-body {
-    font-family: monospace;
-    background-color: black;
-    color: #e5e5e5;   
-    text-align: center;  
-}
-
 .header {
     margin: 30px;
 }
@@ -34,15 +27,22 @@ h1 {
     margin-bottom: 5px;
 }
 
-.exploitButton {
+@media not all and (min-resolution: 0.001dpcm) {
+    * {
+        transition: background-color 1.5s ease 0s, color 0.2s ease 0s;
+    }
+}
+
+#themeButton {
+    position: absolute; 
+    top: 5px; 
+    right: 5px; 
+    text-align: right;
     border-radius: 7px;
     outline: none;
     border: none;
     box-shadow: none;
     background-color: #202020;
     color: #e5e5e5;
-    padding: 15px;
-    width: 90%;   
-    font-size: 15px; 
-    margin: 15px;
+    padding: 6px;
 }

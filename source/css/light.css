@@ -1,0 +1,19 @@
+body {
+    font-family: monospace;
+    background-color: white;
+    color: black;   
+    text-align: center;  
+}
+
+.exploitButton {
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: #202020;
+    color: #e5e5e5;
+    padding: 15px;
+    width: 90%;   
+    font-size: 15px; 
+    margin: 15px;
+}

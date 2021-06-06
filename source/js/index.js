@@ -1,17 +1,7 @@
-var headerTapCounter = 0;
 
 currentFirmware = function (userAgent) {
 	return userAgent.match(/\OS (.*?)\ like/)[1].replaceAll("_", ".");
 };
-
-function slideEasterEgg(){
-    headerTapCounter++;
-    if(headerTapCounter == 5){
-        document.getElementById("jbButton").style.display = "none";
-        document.getElementById("page-wrap").style.display = "block";
-        console.log("easter egg");
-    }
-}
 
 async function pwnMe() {
 	document.getElementById("jbButton").disabled = true;

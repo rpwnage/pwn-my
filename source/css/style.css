@@ -1,76 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
-    margin: 0px;
+  margin: 0px;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
-    --app-height: 100%;
- }
+  --app-height: 100%;
+}
 
 body {
-    font-family: monospace;
-    background-color: black;
-    color: #e5e5e5;       
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
 
-h1, h5 {
-    text-align: center;
+body .content {
+  background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.header {
-    margin: 30px;
+body .content .header-animation .state-ready {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  justify-items: center;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;    
-    justify-content: space-between;
-    align-items: center;    
-    height: var(--app-height);    
+body .content .header-animation .state-ready .manticore-enclosure {
+  margin-top: 2.5em;
+  width: 100%;
 }
 
-h5 {
-    font-weight: 500;
-    margin-bottom: 10px;
+body .content .header-animation .state-ready .lock-wrapper {
+  background-color: #000000;
+  border: none;
+  margin-top: 1.75em;
+  width: 100vw;
 }
 
-h1 {
-    margin-bottom: 5px;
+body .content .jailbreak-shamer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  width: 100vw;
+  font-size: 18px;
+  margin-top: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.exploitButton {
-    border-radius: 7px;
-    outline: none;
-    border: none;
-    box-shadow: none;
-    background-color: #202020;
-    color: #e5e5e5;
-    padding: 15px;
-    width: 90%;   
-    font-size: 15px; 
-    margin: 5%;
+body .content .instructions-wrapper {
+  margin-top: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-@media screen and (orientation:portrait) {
-    .logo {
-        width: 40vw;
-        height: 40vw;
-    }
+body .content .instructions-wrapper .wrapped-instructions .instruction {
+  width: 85vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
-@media screen and (orientation:landscape) {
-    .logo {
-        width: 40vh;
-        height: 40vh;
-    }
+body .content .instructions-wrapper .wrapped-instructions .instruction .instruction-title {
+  width: 54px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 96px;
 }
 
-.jbBox {    
-    border-radius: 7px;
-    box-shadow: none;
-    background-color: #202020;
-    color: #e5e5e5;
-    padding: 25px;
-    font-size: 15px;
-    margin: 30px;
-    text-align: center;
+body .content .instructions-wrapper .wrapped-instructions .instruction .instruction-content {
+  padding-top: 16px;
+  max-width: 65vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
 }
+
+body .content .quick-actions {
+  margin-top: 8em;
+  margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .content .quick-actions .quickaction-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=style.css.map */

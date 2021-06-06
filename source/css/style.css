@@ -47,8 +47,7 @@ h1 {
     padding: 15px;
     width: 90%;   
     font-size: 15px; 
-<<<<<<< HEAD
-    margin: 30px;
+    margin: 5%;
 }
 
 @media screen and (orientation:portrait) {
@@ -70,12 +69,8 @@ h1 {
     box-shadow: none;
     background-color: #202020;
     color: #e5e5e5;
-    padding: 15px;
-    width: 175px;   
-    font-size: 15px; 
+    padding: 25px;
+    font-size: 15px;
     margin: 30px;
+    text-align: center;
 }
-=======
-    margin: 15px;
-}
->>>>>>> a014b42a05bf169f1da0b4a7458f1601a91c7af8

@@ -15,17 +15,14 @@
 <body>
 	<div class="content">
 		<script type="text/javascript" src="/js/index.js"></script>
-		<div class="header">
+		<div class="header" onclick="slideEasterEgg();">
 			<h1>Manticore Web</h1>
 			<h5>iOS 14.5 - 14.6</h5>
 		</div>	
-		<img src="images/manticore.png" class="logo">
-		<div id="interact">
-			<div id="page-wrap">
-				<div id="well">			
-					<h2><strong id="slider"></strong><span>slide to jailbreak</span></h2>			
-				</div>	
-			</div>	
+		<!--<img src="images/manticore.png" class="logo">-->
+		<div id="interact" style="width: 100%;">
+            <button id="jbButton" class="exploitButton" onclick="pwnMe();">Jailbreak</button>	
+            <div id="page-wrap" style="display: none;"><div id="well"><h2><strong id="slider"></strong><span>slide to jailbreak</span></h2></div></div>
 		</div>		
 	</div>
 </body>

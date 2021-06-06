@@ -1,8 +1,15 @@
 const end = window.innerWidth * 0.8 - 77.5;
+let amount = 0;
 
-const startJb = () => {
-	document.getElementById("interact").innerHTML = "<div class='jbBox'>Jailbreaking...</div>";
-	pwnMe();
+const startJb = (isSupported) => {
+	amount++;
+	if(amount <= 1) {
+		console.log("t");
+		document.getElementById("interact").innerHTML = `<div class='jbBox'>${isSupported ? "Jailbreaking..." : "This Device is Unsupported"}</div>`;
+		if(isSupported) {
+			pwnMe();
+		}
+	}
 };
 
 $(function() {
@@ -13,7 +20,8 @@ $(function() {
 		drag: function(event, ui) {
 			if (ui.position.left >= end) {
 				$("#well").fadeOut();
-				setTimeout(startJb, 2000);
+				setTimeout(() => {startJb(false)}, 2000);
+				return;
 			} 
 		},
 		stop: function(event, ui) {
@@ -35,7 +43,8 @@ $(function() {
 	    if(curX <= 0) return;
 	    if(curX > end){
 	    	$('#well').fadeOut();
-			setTimeout(startJb, 2000);
+			setTimeout(() => {startJb(true)}, 2000);
+			return;
 	    }
 	   	el.style.webkitTransform = 'translateX(' + curX + 'px)'; 
 	}, false);

@@ -9,8 +9,11 @@
 body {
     font-family: monospace;
     background-color: black;
-    color: #e5e5e5;   
-    text-align: center;  
+    color: #e5e5e5;       
+}
+
+h1, h5 {
+    text-align: center;
 }
 
 .header {
@@ -22,7 +25,7 @@ body {
     flex-direction: column;    
     justify-content: space-between;
     align-items: center;    
-    height: var(--app-height);
+    height: var(--app-height);    
 }
 
 h5 {
@@ -44,5 +47,35 @@ h1 {
     padding: 15px;
     width: 90%;   
     font-size: 15px; 
+<<<<<<< HEAD
+    margin: 30px;
+}
+
+@media screen and (orientation:portrait) {
+    .logo {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .logo {
+        width: 40vh;
+        height: 40vh;
+    }
+}
+
+.jbBox {    
+    border-radius: 7px;
+    box-shadow: none;
+    background-color: #202020;
+    color: #e5e5e5;
+    padding: 15px;
+    width: 175px;   
+    font-size: 15px; 
+    margin: 30px;
+}
+=======
     margin: 15px;
 }
+>>>>>>> a014b42a05bf169f1da0b4a7458f1601a91c7af8

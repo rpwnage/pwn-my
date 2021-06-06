@@ -1,0 +1,54 @@
+#page-wrap {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+#well {
+  padding: 2px;
+  margin-bottom: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 13px;
+  border: 2px solid #e2e2e2;
+  overflow: hidden;
+  -webkit-user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  width: calc(80vw - 77px);
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 25px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  width: 80vw;
+  color: #e2e2e2;
+}
+#slider {
+  background: url(../images/arrow.png) no-repeat;
+  width: 73px;
+  height: 55px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+@-webkit-keyframes slidetounlock {
+  0% {
+    background-position: -720px 0;
+  }
+  100% {
+    background-position: 720px 0;
+  }
+}

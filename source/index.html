@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="/css/style.css" />
-		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
-		<script type="text/javascript" src="/js/exploits/14.5.js"></script>
-		<script type="text/javascript" src="/js/exploits/14.6.js"></script>
-	</head>
-	<body>
-		<div class="content">
-			<script type="text/javascript" src="/js/index.js"></script>
-			<div class="header">
-				<h1>Manticore Web</h1>
-				<h5>iOS 14.5 - 14.6</h5>
-			</div>			
-			<button id="jbButton" class="exploitButton" onclick="pwnMe();">Jailbreak</button>		
-		</div>
-	</body>
+<head>
+	<meta charset='UTF-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Slide To Jailbreak</title>	
+	<link rel='stylesheet' href='css/slidetounlock.css'>  	
+	<link rel='stylesheet' href='css/style.css'>  	
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'></script>
+	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js'></script>
+	<script src='js/slidetounlock.js'></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/exploits/14.5.js"></script>
+	<script type="text/javascript" src="/js/exploits/14.6.js"></script>
+</head>
+<body>
+	<div class="content">
+		<script type="text/javascript" src="/js/index.js"></script>
+		<div class="header">
+			<h1>Manticore Web</h1>
+			<h5>iOS 14.5 - 14.6</h5>
+		</div>	
+		<img src="images/manticore.png" class="logo">
+		<div id="interact">
+			<div id="page-wrap">
+				<div id="well">			
+					<h2><strong id="slider"></strong><span>slide to jailbreak</span></h2>			
+				</div>	
+			</div>	
+		</div>		
+	</div>
+</body>
 </html>

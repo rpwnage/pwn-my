@@ -87,8 +87,8 @@ body .content .header-animation .state-inprogress .bytecode-banner {
 }
 
 body .content .header-animation .state-inprogress .bytecode-banner span {
-  -webkit-animation: numbers-animation 4s linear infinite;
-          animation: numbers-animation 4s linear infinite;
+  -webkit-animation: numbers-animation 2s linear infinite;
+          animation: numbers-animation 2s linear infinite;
 }
 
 body .content .header-animation .state-inprogress .lock-wrapper {
@@ -110,7 +110,17 @@ body .content .jailbreak-shamer {
           justify-content: center;
 }
 
-body .content .instructions-wrapper {
+body .content .bottom-section {
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .content .bottom-section .instructions-wrapper {
   margin-top: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +131,7 @@ body .content .instructions-wrapper {
           justify-content: center;
 }
 
-body .content .instructions-wrapper .wrapped-instructions .instruction {
+body .content .bottom-section .instructions-wrapper .wrapped-instructions .instruction {
   width: 85vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,7 +143,7 @@ body .content .instructions-wrapper .wrapped-instructions .instruction {
       flex-wrap: nowrap;
 }
 
-body .content .instructions-wrapper .wrapped-instructions .instruction .instruction-title {
+body .content .bottom-section .instructions-wrapper .wrapped-instructions .instruction .instruction-title {
   width: 54px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -141,7 +151,7 @@ body .content .instructions-wrapper .wrapped-instructions .instruction .instruct
   font-size: 96px;
 }
 
-body .content .instructions-wrapper .wrapped-instructions .instruction .instruction-content {
+body .content .bottom-section .instructions-wrapper .wrapped-instructions .instruction .instruction-content {
   padding-top: 16px;
   max-width: 65vw;
   display: -webkit-box;
@@ -150,8 +160,16 @@ body .content .instructions-wrapper .wrapped-instructions .instruction .instruct
   font-size: 18px;
 }
 
+body .content .bottom-section .log-window {
+  margin-top: 2em;
+  width: 85vw;
+  background-color: #2F2F2F;
+  padding: 16px;
+  border-radius: 12px;
+}
+
 body .content .quick-actions {
-  margin-top: 8em;
+  margin-top: 2em;
   margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,19 +188,19 @@ body .content .quick-actions .quickaction-wrapper {
 
 @-webkit-keyframes numbers-animation {
   0% {
-    margin-left: -300px;
+    margin-left: -200px;
   }
   100% {
-    margin-left: 200px;
+    margin-left: 100px;
   }
 }
 
 @keyframes numbers-animation {
   0% {
-    margin-left: -300px;
+    margin-left: -200px;
   }
   100% {
-    margin-left: 200px;
+    margin-left: 100px;
   }
 }
 /*# sourceMappingURL=style.css.map */

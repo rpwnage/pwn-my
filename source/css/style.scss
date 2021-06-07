@@ -51,7 +51,7 @@ body {
                     width: 4em;
                     overflow: hidden;
                     span {
-                        animation: numbers-animation 4s linear infinite;
+                        animation: numbers-animation 2s linear infinite;
                     }
                 }
                 .lock-wrapper {
@@ -68,32 +68,45 @@ body {
             margin-top: 2em;
             justify-content: center;
         }
-        .instructions-wrapper {
-            margin-top: 2em;
+        .bottom-section {
+            height: 40vh;
             display: flex;
-            width: 100vw;
             justify-content: center;
-            .wrapped-instructions {
-                .instruction {
-                width: 85vw;
+            .instructions-wrapper {
+                margin-top: 2em;
                 display: flex;
-                justify-content: space-between;
-                flex-wrap: nowrap;
-                .instruction-title {
-                    width: 54px;
+                width: 100vw;
+                justify-content: center;
+                .wrapped-instructions {
+                    .instruction {
+                    width: 85vw;
                     display: flex;
-                    font-size: 96px;
+                    justify-content: space-between;
+                    flex-wrap: nowrap;
+                        .instruction-title {
+                            width: 54px;
+                            display: flex;
+                            font-size: 96px;
+                        }
+                        .instruction-content {
+                            padding-top: 16px;
+                            max-width: 65vw;
+                            display: flex;
+                            font-size: 18px;
+                        }
+                    }
                 }
-                .instruction-content {
-                    padding-top: 16px;
-                    max-width: 65vw;
-                    display: flex;
-                    font-size: 18px;
-                }
-            }}
+            }
+            .log-window {
+                margin-top: 2em;
+                width: 85vw;
+                background-color: #2F2F2F;
+                padding: 16px;
+                border-radius: 12px;
+            }
         }
         .quick-actions {
-            margin-top: 8em;
+            margin-top: 2em;
             margin-bottom: 2em;
             display: flex;
             width: 85vw;
@@ -107,10 +120,10 @@ body {
 
 @keyframes numbers-animation {
  0% {
-    margin-left: -300px;
+    margin-left: -200px;
  }
  100% {
-    margin-left: 200px;
+    margin-left: 100px;
  }
 
 }

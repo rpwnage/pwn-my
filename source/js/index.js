@@ -4,7 +4,7 @@ currentFirmware = function (userAgent) {
 };
 
 async function pwnMe() {
-	document.getElementById("jbButton").disabled = true;
+	transitionState(1)
 	if (currentFirmware(navigator.userAgent) === "14.5") {
 		socket.emit("log_normal", "Starting exploitation for iOS 14.5");
 	} else if (currentFirmware(navigator.userAgent) === "14.6") {

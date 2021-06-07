@@ -28,6 +28,10 @@ body .content {
       flex-wrap: wrap;
 }
 
+body .content .header-animation {
+  height: calc(2.5em + 64px + 1.75em + 112px);
+}
+
 body .content .header-animation .state-ready {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,19 +39,62 @@ body .content .header-animation .state-ready {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   text-align: center;
-  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .content .header-animation .state-ready .manticore-enclosure {
   margin-top: 2.5em;
-  width: 100%;
+  width: 100vw;
 }
 
 body .content .header-animation .state-ready .lock-wrapper {
-  background-color: #000000;
-  border: none;
   margin-top: 1.75em;
   width: 100vw;
+}
+
+body .content .header-animation .state-inprogress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: calc(2.5em + 64px + 1.75em);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .content .header-animation .state-inprogress .manticore-enclosure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .content .header-animation .state-inprogress .bytecode-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 4em;
+  overflow: hidden;
+}
+
+body .content .header-animation .state-inprogress .bytecode-banner span {
+  -webkit-animation: numbers-animation 4s linear infinite;
+          animation: numbers-animation 4s linear infinite;
+}
+
+body .content .header-animation .state-inprogress .lock-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body .content .jailbreak-shamer {
@@ -119,5 +166,23 @@ body .content .quick-actions .quickaction-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@-webkit-keyframes numbers-animation {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: 200px;
+  }
+}
+
+@keyframes numbers-animation {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: 200px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

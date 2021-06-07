@@ -19,20 +19,43 @@ body {
         justify-content: center;
         flex-wrap: wrap;
         .header-animation {
+            height: calc(2.5em + 64px + 1.75em + 112px);
             .state-ready {
                 display: flex;
                 flex-wrap: wrap;
                 text-align: center;
-                justify-items: center;
+                justify-content: center;
+
                 .manticore-enclosure {
                     margin-top: 2.5em;
-                    width: 100%;
+                    width: 100vw;
                 }
                 .lock-wrapper {
-                    background-color: #000000;
-                    border: none;
                     margin-top: 1.75em;
                     width: 100vw;
+                }
+            }
+            .state-inprogress {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+                padding-top: calc(2.5em + 64px + 1.75em);
+                align-items: center;
+                .manticore-enclosure {
+                    display: flex;
+                }
+                .bytecode-banner {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 4em;
+                    overflow: hidden;
+                    span {
+                        animation: numbers-animation 4s linear infinite;
+                    }
+                }
+                .lock-wrapper {
+                    display: flex;
                 }
             }
             
@@ -82,3 +105,12 @@ body {
     }
 }
 
+@keyframes numbers-animation {
+ 0% {
+    margin-left: -300px;
+ }
+ 100% {
+    margin-left: 200px;
+ }
+
+}

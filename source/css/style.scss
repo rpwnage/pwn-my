@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --app-height: 100%;
+ }
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    .content {
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .header-animation {
+            height: calc(2.5em + 64px + 1.75em + 112px);
+            .state-ready {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+
+                .manticore-enclosure {
+                    margin-top: 2.5em;
+                    width: 100vw;
+                }
+                .lock-wrapper {
+                    margin-top: 1.75em;
+                    width: 100vw;
+                }
+            }
+            .state-inprogress {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+                padding-top: calc(2.5em + 64px + 1.75em);
+                align-items: center;
+                .manticore-enclosure {
+                    display: flex;
+                }
+                .bytecode-banner {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 4em;
+                    overflow: hidden;
+                    span {
+                        animation: numbers-animation 2s linear infinite;
+                    }
+                }
+                .lock-wrapper {
+                    display: flex;
+                }
+            }
+            
+        }
+        .jailbreak-shamer {
+            display: flex;
+            text-align: center;
+            width: 100vw;
+            font-size: 18px;
+            margin-top: 2em;
+            justify-content: center;
+        }
+        .bottom-section {
+            height: 40vh;
+            display: flex;
+            justify-content: center;
+            .instructions-wrapper {
+                margin-top: 2em;
+                display: flex;
+                width: 100vw;
+                justify-content: center;
+                .wrapped-instructions {
+                    .instruction {
+                    width: 85vw;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: nowrap;
+                        .instruction-title {
+                            width: 54px;
+                            display: flex;
+                            font-size: 96px;
+                        }
+                        .instruction-content {
+                            padding-top: 16px;
+                            max-width: 65vw;
+                            display: flex;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .log-window {
+                margin-top: 2em;
+                width: 85vw;
+                background-color: #2F2F2F;
+                padding: 16px;
+                border-radius: 12px;
+            }
+        }
+        .quick-actions {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            display: flex;
+            width: 85vw;
+            justify-content: space-between;
+            .quickaction-wrapper {
+                display: flex;
+            }
+        }
+    }
+}
+
+@keyframes numbers-animation {
+ 0% {
+    margin-left: -200px;
+ }
+ 100% {
+    margin-left: 100px;
+ }
+
+}

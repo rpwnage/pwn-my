@@ -11,3 +11,5 @@ Made by RPwnage & the Manticore team
 
 JOIN US AT THE MANTICORE DISCORD SERVER https://discord.gg/mWHbDWcwmZ
 Expect nice things soon™
+# This UI
+This is just the ui, nothing special. I am also not affiliated with Manticore team, just a random 15 y/o from Switzerland with ambitions.

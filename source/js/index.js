@@ -13,16 +13,16 @@ function slideEasterEgg() {
 }
 
 async function pwnMe() {
-	if (location.protocol != "https:") {
+	if (location.protocol == "https:") {
 		document.getElementById("jbButton").disabled = true;
-		if (navigator.userAgent.includes("Mac OS X")) {
-			alert("MacOS is not supported");
-		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
 			socket.emit("log_normal", "Starting exploitation for iOS 14.5");
 			await kickstart145();
 		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
 			socket.emit("log_normal", "Starting exploitation for iOS 14.6");
 			await kickstart146();
+		} else if (navigator.userAgent.includes("Mac OS X")) {
+			alert("MacOS is not supported");
 		} else {
 			socket.emit("error", "Detected a unsupported version/device");
 		}

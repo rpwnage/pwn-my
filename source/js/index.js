@@ -12,24 +12,38 @@ function slideEasterEgg() {
 	}
 }
 
-async function pwnMe() {
-	if (location.protocol != "https:") {
-		document.getElementById("jbButton").disabled = true;
-		if (navigator.userAgent.includes("Mac OS X")) {
-			alert("MacOS is not supported");
-		} else if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
-			socket.emit("log_normal", "Starting exploitation for iOS 14.5");
-			await kickstart145();
-		} else if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
-			socket.emit("log_normal", "Starting exploitation for iOS 14.6");
-			await kickstart146();
-		} else {
-			socket.emit("error", "Detected a unsupported version/device");
+async function pwnMe() { 
+	if (location.protocol === "https:") {
+	  if (
+		navigator.userAgent.includes("iPhone") ||
+		navigator.userAgent.includes("iPad")
+	  ) {
+		if (navigator.userAgent.includes("Macintosh")) {
+		  alert("MacOS is not supported");
+		  return;
 		}
-	}else{
-        alert("exploitation only works over https");
-    }
-}
+		
+		if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+		  socket.emit("log_normal", "Starting exploitation for iOS 14.5");
+		  await kickstart145();
+		  return;
+		}
+		
+		if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+		  socket.emit("log_normal", "Starting exploitation for iOS 14.6");
+		  await kickstart146();
+		  return;
+		}
+	  } else {
+		alert("Detected a unsupported version/device");
+		socket.emit("error", "Detected a unsupported version/device");
+		return;
+	  }
+	} else {
+	  document.getElementById("jbButton").disabled = true;
+	  alert("exploitation only works over https");
+	}
+  }
 
 const appHeight = () => {
 	const doc = document.documentElement;
@@ -38,3 +52,11 @@ const appHeight = () => {
 
 window.addEventListener("resize", appHeight);
 appHeight();
+
+window.onload = () => {
+
+	//force redirect to https
+	if (window.location.protocol !== "https:") {
+		window.location.protocol = "https:";
+	}
+}

@@ -37,6 +37,83 @@ h1 {
     margin-bottom: 5px;
 }
 
+section.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #252A33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    transition: 0.8s 0.6s;
+    flex-direction: column;
+}
+
+section.loader svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+section.loader svg g {
+    fill: white;
+    transform: scale(0.2);
+    transform-origin: center;
+    filter: blur(0px);
+    transition: 0.25s;
+}
+
+section.loader.start svg g {
+    fill: white;
+    transform: scale(0.25);
+    transform-origin: center;
+    transition: 3s;
+}
+
+body.finalizing section.loader svg g {
+    fill: rgba(255, 255, 255, 0.041);
+    transform: scale(0.3);
+    transform-origin: center;
+    transition: 1s;
+}
+
+body section.loader svg path {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0px), 0 calc(100% - 0px));
+    transition: 0.5s;
+}
+
+body.finalizing section.loader svg path {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 53px), 0 calc(100% - 53px));
+    transition: 1s;
+}
+
+body.finalizing section.loader rect{
+    transform: translateY(-60px);
+    transition: 1s;
+}
+
+section.loader svg{
+    fill: white;
+}
+
+section.loader svg rect {
+    fill: white;
+    position: relative;
+    transform: translateY(-2px);
+    transition: 0.5s;
+}
+
+body.loaded section.loader svg rect {
+    fill: white;
+    position: relative;
+    transform: translateY(0px);
+    transition: 0.5s;
+}
+
+
 .exploitButton {
     border-radius: 7px;
     outline: none;
@@ -74,3 +151,7 @@ h1 {
     margin: 30px;
     text-align: center;
 }
+
+::-webkit-scrollbar {
+    display: none;
+  }

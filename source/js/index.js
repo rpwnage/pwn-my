@@ -53,10 +53,49 @@ const appHeight = () => {
 window.addEventListener("resize", appHeight);
 appHeight();
 
-window.onload = () => {
+// window.onload = () => {
+//	//force redirect to https
+//	if (window.location.protocol !== "https:") {
+//		window.location.protocol = "https:";
+//	}
+// }
 
-	//force redirect to https
-	if (window.location.protocol !== "https:") {
-		window.location.protocol = "https:";
-	}
-}
+$(document).ready(function() {
+
+	console.log("document loaded");
+	$("section.loader").addClass('load');
+	$("body").removeClass();
+
+	$(window).resize(function() {
+		var height = $("section.loader").height();
+		$("body.loaded section.loader").css("transform", "translateY(-" + height + "px)" );
+	});
+
+	// prep-start
+	setTimeout(function() {
+		$("body").addClass('start');
+		$("section.loader").removeClass('load');
+		console.log("prep animation");
+	}, 100);
+
+	// Start Animation
+	setTimeout(function() {
+		$("section.loader").addClass('start');
+		$("body").removeClass('start').addClass('loading');
+		console.log("started animation");
+	}, 1000);
+
+	// prep-end Animation
+	setTimeout(function() {
+		$("body").removeClass('loading').addClass('finalizing');
+	}, 2000);
+
+	// End Animation
+	setTimeout(function() {
+		$("section.loader").removeClass('start');
+		$("body").removeClass('finalizing').addClass('loaded');
+		var height = $("section.loader").height();
+		$("section.loader").css("transform", "translateY(-" + height + "px)" );
+		console.log("finished animation");
+	}, 3000);
+});

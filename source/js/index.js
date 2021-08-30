@@ -48,6 +48,8 @@ async function pwnMe() {
 const appHeight = () => {
 	const doc = document.documentElement;
 	doc.style.setProperty("--app-height", `${window.innerHeight}px`);
+	doc.style.setProperty("--app-height-neg", `-${window.innerHeight}px`);
+	doc.style.setProperty("--app-width", `${window.innerWidth}px`);
 };
 
 window.addEventListener("resize", appHeight);
@@ -63,24 +65,18 @@ appHeight();
 $(document).ready(function() {
 
 	console.log("document loaded");
-	$("section.loader").addClass('load');
-	$("body").removeClass();
-
-	$(window).resize(function() {
-		var height = $("section.loader").height();
-		$("body.loaded section.loader").css("transform", "translateY(-" + height + "px)" );
-	});
+	$("section.header").addClass('load');
 
 	// prep-start
 	setTimeout(function() {
 		$("body").addClass('start');
-		$("section.loader").removeClass('load');
+		$("section.header").removeClass('load');
 		console.log("prep animation");
 	}, 100);
 
 	// Start Animation
 	setTimeout(function() {
-		$("section.loader").addClass('start');
+		$("section.header").addClass('start');
 		$("body").removeClass('start').addClass('loading');
 		console.log("started animation");
 	}, 1000);
@@ -92,10 +88,46 @@ $(document).ready(function() {
 
 	// End Animation
 	setTimeout(function() {
-		$("section.loader").removeClass('start');
+		$("section.header").removeClass('start');
 		$("body").removeClass('finalizing').addClass('loaded');
-		var height = $("section.loader").height();
-		$("section.loader").css("transform", "translateY(-" + height + "px)" );
 		console.log("finished animation");
 	}, 3000);
+
+	// sike, it did not end lmao. move all elements up now.
+	setTimeout(function() {
+		$("body").addClass('home');
+		console.log("really finished the animation this time.");
+	}, 4100);
+
+	// show badges
+	setTimeout(function() {
+		$(".badge").removeClass('hidden');
+		console.log("showing badges");
+	}, 5100);
+});
+
+$( document ).ready(function() {
+    //Badges
+    const globalState = {
+    	badges: [
+			{name: 'WEB', bg: '#2196f3', color: 'white'},
+    	  	{name: 'Beta', bg: '#f44336', color: 'white'},
+    	  	{name: 'Deluxe', bg: '#9c27b0', color: 'white'},
+    	  	{name: 'PRO', bg: '#ffc107', color: 'white'},
+    	  	{name: 'DEV', bg: '#009688', color: 'white'},
+    	  	{name: 'EGG', bg: '#9e9e9e', color: 'white'}
+    	]
+	};
+
+	//Insert badges
+    function badge(badges){
+        let html = '';
+        badges.map((badge) => {
+            html += `<div class="hidden badge" style=" background: ${badge.bg}; color: ${badge.color};">${badge.name}</div>`;
+        });
+        $('.header .title .top .badges').append(html);
+    };
+	setTimeout(function() {
+		badge(globalState.badges, $('.header .title .top .badges'));
+	}, 4400);
 });

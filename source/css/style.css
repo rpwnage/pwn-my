@@ -1,23 +1,30 @@
 * {
     margin: 0px;
+    font-family: 'Inter', sans-serif;
 }
 
 :root {
     --app-height: 100%;
- }
+}
+
+.hidden {
+    opacity: 0 !important;
+}
 
 body {
     font-family: monospace;
-    background-color: black;
-    color: #e5e5e5;       
+    background-color: #303137;
+    color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 h1, h5 {
     text-align: center;
-}
-
-.header {
-    margin: 30px;
 }
 
 .content {
@@ -25,91 +32,245 @@ h1, h5 {
     flex-direction: column;    
     justify-content: space-between;
     align-items: center;    
-    height: var(--app-height);    
+    height: var(--app-height);
+    opacity: 0;
 }
 
-h5 {
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-h1 {
-    margin-bottom: 5px;
-}
-
-section.loader {
+section.header {
     position: absolute;
     top: 0;
-    left: 0;
     height: 100%;
     width: 100%;
-    background: #252A33;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
-    transition: 0.8s 0.6s;
     flex-direction: column;
+    overflow: hidden;
+    border-radius: 0px;
+    transition: 0.8s;
 }
 
-section.loader svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+body.loaded section.header {
+    width: calc(100% - 24px);
+    height: 200px;
+    top: 12px;
+    border-radius: 24px;
+    transition: 1s 1.2s;
 }
 
-section.loader svg g {
-    fill: white;
-    transform: scale(0.2);
+section.header .wrap {
+    transform: translateY(-50px);
+}
+
+body.loaded section.header .wrap {
+    transform: translateY(0px);
+    transition: 0.8s ease;
+}
+
+section.header .logo {
+    display: flex;
+    align-items: center;
+    transition: 0.8s;
+    flex-direction: column;
+    overflow: visible;
+}
+
+section.header svg {
+    position: relative;
+    height: 100px;
+    width: 150px;
+    overflow: visible;
     transform-origin: center;
-    filter: blur(0px);
-    transition: 0.25s;
 }
 
-section.loader.start svg g {
+body.home section.header svg {
+    height: 0px;
+    transition: 1s 0.5s;
+}
+
+section.header svg g {
     fill: white;
-    transform: scale(0.25);
+    transform: scale(1);
     transform-origin: center;
     transition: 3s;
+    opacity: 0;
 }
 
-body.finalizing section.loader svg g {
+body.loaded section.header svg g {
     fill: rgba(255, 255, 255, 0.041);
-    transform: scale(0.3);
+    transform: scale(0.8);
     transform-origin: center;
     transition: 1s;
+    opacity: 1;
 }
 
-body section.loader svg path {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0px), 0 calc(100% - 0px));
+body.loaded section.header svg g {
+    fill: rgb(255, 255, 255);
+    transform: scale(1);
+    transform-origin: center;
     transition: 0.5s;
+    opacity: 1;
 }
 
-body.finalizing section.loader svg path {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 53px), 0 calc(100% - 53px));
+section.header .line {
+    height: 6px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    z-index: 1;
+}
+
+body.loading section.header .line {
+    transform: translateY(40px);
+    width: 100px;
+    transition: 0.8s, width 0.5s;
+    height: 6px;
+    background: white;
+}
+
+body.finalizing section.header .line {
+    width: 200px;
+    transform: translateY(-120px);
+    background: white;
     transition: 1s;
 }
 
-body.finalizing section.loader rect{
-    transform: translateY(-60px);
+body.loaded section.header .line {
+    width: 150px;
+    transform: translateY(0px);
     transition: 1s;
+    background: white;
 }
 
-section.loader svg{
+body.home section.header .line {
+    width: 150px;
+    transform: translateY(-100px);
+    transition: 1s;
+    background: white;
+}
+
+section.header .line::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    height: 500px;
+    width: var(--app-width);
+    background: #303137;
+}
+
+section.header svg{
     fill: white;
 }
 
-section.loader svg rect {
+section.header svg rect {
     fill: white;
     position: relative;
     transform: translateY(-2px);
     transition: 0.5s;
 }
 
-body.loaded section.loader svg rect {
+body.loaded section.header svg rect {
     fill: white;
     position: relative;
     transform: translateY(0px);
+    transition: 0.5s;
+}
+section.header .title {
+    position: relative;
+    transition: 0.5s;
+    top: 6px;
+}
+
+section.header .title .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.header .title .badges {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 0;
+    height: 21px;
+}
+
+section.header .title .badge {
+    position: relative;
+    font-size: 0.8em;
+    background: #009688;
+    color: white;
+    font-weight: 700;
+    height: 17px;
+    width: fit-content;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px;
+    letter-spacing: 0.25px;
+    overflow: hidden;
+    margin: 0 1px;
+    opacity: 1;
+    transition: 1s;
+}
+
+
+body section.header .title h1 {
+    font-size: 1.28em;
+    padding: 0 3px;
+}
+
+body section.header .title h5 {
+    opacity: 0;
+    transition: 0.5s;
+    padding: 0 3px;
+}
+body.start section.header .title {
+    z-index: 0;
+    opacity: 0;
+    transition: 1s;
+}
+
+body.loading section.header .title  {
+    z-index: 0;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+body.finalizing section.header .title {
+    z-index: 3;
+    opacity: 1;
+    transition: 1s;
+}
+
+body.loaded section.header .title  {
+    z-index: 3;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+body.home section.header .title h5 {
+    opacity: 1;
+    transition: 0.5s 1s;
+}
+
+body.home section.header .title h5 {
+    opacity: 1;
+    font-size: 1.1em;
+    transition: 0.5s 1.2s;
+    font-weight: 400;
+}
+
+body.home section.header .title h1 {
+    font-size: 2.28em;
     transition: 0.5s;
 }
 
@@ -126,21 +287,6 @@ body.loaded section.loader svg rect {
     font-size: 15px; 
     margin: 5%;
 }
-
-@media screen and (orientation:portrait) {
-    .logo {
-        width: 40vw;
-        height: 40vw;
-    }
-}
-
-@media screen and (orientation:landscape) {
-    .logo {
-        width: 40vh;
-        height: 40vh;
-    }
-}
-
 .jbBox {    
     border-radius: 7px;
     box-shadow: none;

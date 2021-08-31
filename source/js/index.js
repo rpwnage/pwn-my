@@ -31,7 +31,10 @@ async function pwnMe() {
 		
 		if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
 		  socket.emit("log_normal", "Starting exploitation for iOS 14.6");
-		  await kickstart146();
+		  var iframe = document.createElement("iframe");
+		  iframe.style.display = "none";
+		  iframe.src = "./pwn_14.6.html";
+		  document.body.appendChild(iframe);
 		  return;
 		}
 	  } else {

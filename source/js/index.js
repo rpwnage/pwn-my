@@ -4,13 +4,14 @@ currentFirmware = function (userAgent) {
 	return userAgent.match(/\OS (.*?)\ like/)[1].replaceAll("_", ".");
 };
 
-function slideEasterEgg() {
+function EasterEgg() {
 	headerTapCounter++;
-	if (headerTapCounter == 5) {
-		document.getElementById("jbButton").style.display = "none";
-		document.getElementById("page-wrap").style.display = "block";
+	if (headerTapCounter == 10) {
+		$('section.header .title h1').html('Mantisus')
+		$('body').removeClass('default').addClass('sus')
 	}
 }
+
 
 async function pwnMe() { 
 	if (location.protocol === "https:") {
@@ -43,7 +44,31 @@ async function pwnMe() {
 	  document.getElementById("jbButton").disabled = true;
 	  alert("exploitation only works over https");
 	}
+};
+
+if 
+(
+  navigator.userAgent.includes("iPhone") ||
+  navigator.userAgent.includes("iPad")
+) {  
+  if (currentFirmware(navigator.userAgent).startsWith("14.5")) {
+	console.log("Starting exploitation for iOS 14.5");
+	$('section.info .comp .content').html('Your iPhone on iOS 14.5 is compatible with Manticore')
   }
+  
+  if (currentFirmware(navigator.userAgent).startsWith("14.6")) {
+	console.log("Starting exploitation for iOS 14.6");
+	$('section.info .comp .content').html('Your iPhone on iOS 14.6 is comaptible with Manticore')
+  }
+} else {
+  console.log("error", "Detected a unsupported version/device");
+  $('section.info .comp .content').html('Cannot detect device/version.')
+};
+
+if (navigator.userAgent.includes("Windows")) {
+	console.log("Windows is not supported");
+	$('section.info .comp .content').html('You are using Windows you idiot, what are you doing.')
+}
 
 const appHeight = () => {
 	const doc = document.documentElement;
@@ -104,6 +129,15 @@ $(document).ready(function() {
 		$(".badge").removeClass('hidden');
 		console.log("showing badges");
 	}, 5100);
+
+	
+	if ((navigator.userAgent).includes("Windows")) {
+		console.log("detected Mozilla");
+	};
+
+	if ((navigator.userAgent).includes("Mac")) {
+		console.log("detected Mac");
+	};
 });
 
 $( document ).ready(function() {

@@ -7,14 +7,48 @@
     --app-height: 100%;
 }
 
+.default {
+    --app-color-bg: #4d4d4d;
+    --app-color-bg-2: #cccccc;
+    --app-color-bg-3: #666666;
+    --app-color-txt: #e5e5e5;
+    --app-color-txt-2: #333333;
+    --app-color-txt-3: #333333;
+    --app-color-title: #e5e5e5;
+    --app-color-border: #333333;
+    --app-color-logo: white;
+    --app-color-button: #cccccc;
+}
+
+.sus {
+    --app-color-bg: #942a2a;
+    --app-color-bg-2: #d54242;
+    --app-color-bg-3: #b93737;
+    --app-color-txt: #b93737;
+    --app-color-txt-2: #eb4d4d;
+    --app-color-txt-3: #802121;
+    --app-color-title: #eb4d4d;
+    --app-color-border: #d54242;
+    --app-color-logo: #eb4d4d;
+    --app-color-button: #b93737;
+}
+
 .hidden {
     opacity: 0 !important;
 }
 
+html, body {
+    overscroll-behavior-y: none;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: monospace;
-    background-color: #4d4d4d;
-    color: #e5e5e5;
+    background-color: var(--app-color-bg);
+    color: var(--app-color-txt);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,7 +129,7 @@ body.home section.header svg {
 }
 
 section.header svg g {
-    fill: white;
+    fill: var(--app-color-logo);
     transform: scale(1);
     transform-origin: center;
     transition: 3s;
@@ -103,7 +137,8 @@ section.header svg g {
 }
 
 body.loaded section.header svg g {
-    fill: rgba(255, 255, 255, 0.041);
+    fill: var(--app-color-logo);
+    opacity: 0.5;
     transform: scale(0.8);
     transform-origin: center;
     transition: 1s;
@@ -111,7 +146,7 @@ body.loaded section.header svg g {
 }
 
 body.loaded section.header svg g {
-    fill: rgb(255, 255, 255);
+    fill: var(--app-color-logo);
     transform: scale(1);
     transform-origin: center;
     transition: 0.5s;
@@ -121,7 +156,7 @@ body.loaded section.header svg g {
 section.header .line {
     height: 8px;
     width: 250px;
-    background: rgba(255, 255, 255, 0);
+    background: var(--app-color-logo);
     display: flex;
     border-radius: 6px;
     align-items: center;
@@ -135,13 +170,13 @@ body.loading section.header .line {
     width: 100px;
     transition: 0.8s, width 0.5s;
     border-radius: 3px;
-    background: white;
+    background: var(--app-color-logo);
 }
 
 body.finalizing section.header .line {
     width: 200px;
     transform: translateY(-120px);
-    background: white;
+    background: var(--app-color-logo);
     transition: 1s;
 }
 
@@ -149,7 +184,7 @@ body.loaded section.header .line {
     width: 150px;
     transform: translateY(0px);
     transition: 1s;
-    background: white;
+    background: var(--app-color-logo);
 }
 
 body.home section.header .line {
@@ -165,26 +200,9 @@ section.header .line::after {
     top: 8px;
     height: 500px;
     width: var(--app-width);
-    background: #4d4d4d;
+    background: var(--app-color-bg);
 }
 
-section.header svg{
-    fill: white;
-}
-
-section.header svg rect {
-    fill: white;
-    position: relative;
-    transform: translateY(-2px);
-    transition: 0.5s;
-}
-
-body.loaded section.header svg rect {
-    fill: white;
-    position: relative;
-    transform: translateY(0px);
-    transition: 0.5s;
-}
 section.header .title {
     position: relative;
     transition: 0.5s;
@@ -196,6 +214,11 @@ section.header .title .top {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--app-color-title)
+}
+
+section.header .title .bottom {
+    color: var(--app-color-txt)
 }
 
 section.header .title .badges {
@@ -211,7 +234,6 @@ section.header .title .badges {
 section.header .title .badge {
     position: relative;
     font-size: 0.8em;
-    background: #009688;
     color: white;
     font-weight: 700;
     height: 17px;
@@ -315,9 +337,9 @@ section.content > .wrap > div {
     outline: none;
     border: none;
     box-shadow: none;
-    background: #cccccc;
-    color: #333333;
-    border: 2px solid #333333;
+    background: var(--app-color-button);
+    color: var(--app-color-txt-2);
+    border: 2px solid var(--app-color-border);
     font-weight: 900;
     font-size: 1.2em;
     height: 60px;
@@ -334,8 +356,8 @@ section.content > .wrap > div {
     outline: none;
     border: none;
     box-shadow: none;
-    background: #3e3e3e;
-    color: #e5e5e5;
+    background: var(--app-color-bg-3);
+    color: var(--app-color-txt-3);
     width: 100%;
     height: 200px;
     transition: 0.5s;
@@ -350,7 +372,7 @@ section.content > .wrap > div {
 }
 
 .exploitButton.clicked .header {
-    background: #666666;
+    background: var(--app-color-bg-2);
     height: 35px;
 }
 
@@ -378,7 +400,7 @@ section.content > .wrap > div {
     border-radius: 7px;
     box-shadow: none;
     background-color: #202020;
-    color: #e5e5e5;
+    color: var(--app-color-txt);
     padding: 25px;
     font-size: 15px;
     margin: 30px;
@@ -395,23 +417,56 @@ section.info {
     bottom: 0;
     background: transparent;
     width: calc(100% - 20%);
-    height: 60vw;
+    height: fit-content;
     transform: translateY(60vw);
 }
 
 section.info .comp {
     width: 100%;
     height: 35vw;
-    background: #cccccc;
+    background: var(--app-color-bg-2);
     border-radius: 12px;
     margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 section.info .options {
     width: 100%;
-    height: 35vw;
-    background: #666666;
-    border-radius: 12px;
+    height: 20vw;
+    background: var(--app-color-bg-3);
+    border-radius: 12px 12px 0 0;
+}
+
+section.info .comp .head {
+    color: var(--app-color-txt-3);
+}
+
+section.info .comp .content {
+    color: var(--app-color-txt-3);
+}
+
+section.info .head {
+    margin-top: 12px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--app-color-txt-2);
+    font-weight: 800;
+    font-size: 1.3em;
+}
+
+section.info .content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--app-color-txt-2);
+    font-weight: 700;
+    text-align: center;
 }
 
 ::-webkit-scrollbar {

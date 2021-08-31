@@ -13,7 +13,7 @@ function slideEasterEgg() {
 }
 
 async function pwnMe() { 
-	if (location.protocol === "http:") {
+	if (location.protocol === "https:") {
 	  if (
 		navigator.userAgent.includes("iPhone") ||
 		navigator.userAgent.includes("iPad")

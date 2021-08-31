@@ -21,6 +21,8 @@ body {
     align-content: center;
     flex-wrap: nowrap;
     justify-content: center;
+    max-height: var(--app-height);
+    overflow: hidden;
 }
 
 h1, h5 {

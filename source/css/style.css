@@ -17,7 +17,64 @@
     --app-color-title: #e5e5e5;
     --app-color-border: #333333;
     --app-color-logo: white;
+    --app-color-line: white;
     --app-color-button: #cccccc;
+}
+
+.really-dark {
+    --app-color-bg: #ffffff;
+    --app-color-bg-2: #cccccc;
+    --app-color-bg-3: #ebebeb;
+    --app-color-txt: #666666;
+    --app-color-txt-2: #333333;
+    --app-color-txt-3: #333333;
+    --app-color-title: #333333;
+    --app-color-border: #cccccc;
+    --app-color-logo: #666666;
+    --app-color-line: #333333;
+    --app-color-button: #ebebeb;
+}
+
+.manti {
+    --app-color-bg: #000000;
+    --app-color-bg-2: #1F2020;
+    --app-color-bg-3: #0D0D0D;
+    --app-color-txt: #e5e5e5;
+    --app-color-txt-2: #e5e5e5;
+    --app-color-txt-3: #e5e5e5;
+    --app-color-title: #e5e5e5;
+    --app-color-border: #333333;
+    --app-color-logo: white;
+    --app-color-line: white;
+    --app-color-button: #202020;
+}
+
+.goon {
+    --app-color-bg: #2b313c;
+    --app-color-bg-2: #444c5e;
+    --app-color-bg-3: #343a47;
+    --app-color-txt: #6c758b;
+    --app-color-txt-2: #abb6d1;
+    --app-color-txt-3: #abb6d1;
+    --app-color-title: #abb6d1;
+    --app-color-border: #444c5e;
+    --app-color-logo: #abb6d1;
+    --app-color-line: #abb6d1;
+    --app-color-button: #3c4352;
+}
+
+.viola {
+    --app-color-bg: #1c1b29;
+    --app-color-bg-2: #343355;
+    --app-color-bg-3: #292841;
+    --app-color-txt: #393b59;
+    --app-color-txt-2: #5d608d;
+    --app-color-txt-3: #5d608d;
+    --app-color-title: #5d608d;
+    --app-color-border: #393b59;
+    --app-color-logo: #4e5177;
+    --app-color-line: #5d608d;
+    --app-color-button: #292841;
 }
 
 .sus {
@@ -26,10 +83,11 @@
     --app-color-bg-3: #b93737;
     --app-color-txt: #b93737;
     --app-color-txt-2: #eb4d4d;
-    --app-color-txt-3: #802121;
+    --app-color-txt-3: #942a2a;
     --app-color-title: #eb4d4d;
     --app-color-border: #d54242;
     --app-color-logo: #eb4d4d;
+    --app-color-line: #eb4d4d;
     --app-color-button: #b93737;
 }
 
@@ -156,7 +214,7 @@ body.loaded section.header svg g {
 section.header .line {
     height: 8px;
     width: 250px;
-    background: var(--app-color-logo);
+    background: var(--app-color-line);
     display: flex;
     border-radius: 6px;
     align-items: center;
@@ -170,13 +228,13 @@ body.loading section.header .line {
     width: 100px;
     transition: 0.8s, width 0.5s;
     border-radius: 3px;
-    background: var(--app-color-logo);
+    background: var(--app-color-line);
 }
 
 body.finalizing section.header .line {
     width: 200px;
     transform: translateY(-120px);
-    background: var(--app-color-logo);
+    background: var(--app-color-line);
     transition: 1s;
 }
 
@@ -184,7 +242,7 @@ body.loaded section.header .line {
     width: 150px;
     transform: translateY(0px);
     transition: 1s;
-    background: var(--app-color-logo);
+    background: var(--app-color-line);
 }
 
 body.home section.header .line {
